@@ -1,0 +1,437 @@
+Q1:  Write a Java program named Car ● The Car class should have the following attributes: make (String), model (String) , year (short) , and price(int) . ● The car class should have a constructor that takes all the attributes. ● Add a main method to instantiate car objects. ● The program should allow the user to create and display objects of each Car Class. 
+package CarModel;
+
+public class Car {
+    private String make;
+    private String model;
+    private short years;
+    private int price;
+    public Car(String make, String model ,short years, int price){
+        this.make=make;
+        this.model = model;
+        this.years = years;
+        this.price = price;
+    }
+    public String getMake(){
+        return make;
+    }
+    public void setMake(String make){
+        this.make=make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public short getYears() {
+        return years;
+    }
+
+    public void setYears(short years) {
+        this.years = years;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+}
+
+package CarModel;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter car make ");
+        String make=sc.nextLine();
+        System.out.print(" Enter car model ");
+        String model=sc.nextLine();
+        System.out.print("Enter car manufacture years  ");
+        short years=sc.nextShort();
+        System.out.print("Enter car price ");
+        int price=sc.nextInt();
+        Car car=new Car(make,model,years,price);
+        System.out.println("Make " +car.getMake());
+        System.out.println("Model " +car.getModel());
+        System.out.println("Years " +car.getYears());
+        System.out.println("Price " +car.getPrice());
+
+
+    }
+}
+------------------------------------------------------------------------------------------------------
+
+Q2: Write a Java program that demonstrates method overloading by creating a class called Calculator. ● Add three methods called add(). ● The first add() method should take two int variables as arguments and return their sum as int. ● The second add() method should take three int variables as arguments and return their sum as int. ● The third add() method should take two doubles as arguments and return their sum as double. ● The program should allow the user to display the results of each method. 
+
+package MethodOverLoading;
+
+public class Calculator {
+    public  int add(int num1, int num2){
+        return num1+num2;
+    }
+    public int add(int num1, int num2,int num3){
+        return num1 + num2 + num3;
+    }
+    public double add(double num1, double num2){
+        return num1+num2;
+    }
+
+}
+
+package MethodOverLoading;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculator cal = new Calculator();
+        System.out.println("Welcome to calculator!");
+        System.out.println("Please Enter two number ");
+        int num1= sc.nextInt();
+        int num2 = sc.nextInt();
+        int sum= cal.add(num1,num2);
+        System.out.println("Sum of Integer "+sum);
+        System.out.print("Enter third number " );
+        int num3 = sc.nextInt();
+        int sum3num= cal.add(num1,num2,num3);
+        System.out.println("Sum of Three Integer " +sum3num);
+        System.out.print("Enter two double number ");
+        double n1 =sc.nextDouble();
+        double n2 = sc.nextDouble();
+        double sums = cal.add(n1,n2);
+
+        System.out.println("Sum of two Double Number "+sums);
+    }
+}
+
+----------------------------------------------------------------------------------------------------------
+
+Q3:- Create a Java Bean Class Student. ● Add three attributes ○ private String name; ○ private int age; ○ private String department; ● Add a constructor that takes all three attributes as parameters. ● Add setter and getter methods ● C o m pile t h e p r o g r a m.
+
+package Student;
+
+public class Std {
+    private String name;
+    private int age;
+    private String department;
+    public Std(String name, int age, String department){
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public int getAge(){
+        return age;
+
+
+    }
+    public void setAge(int age){
+        this.age=age;
+    }
+    public String getDepartment(){
+        return department;
+    }
+    public void setDepartment(String department){
+        this.department = department;
+    }
+
+
+}
+
+package Student;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Student Name ");
+        String name= sc.nextLine();
+        System.out.print("Enter the Student Age ");
+        int age = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter the Student Department ");
+        String department = sc.nextLine();
+        Std student = new Std(name, age,department);
+        System.out.println(student.getName()+ " , " +student.getAge()+ " , " +student.getDepartment());
+//        System.out.println(student.getAge());
+//        System.out.println(student.getDepartment());
+    }
+}
+==========================================================
+Q4:- Create a class Student in Student.java then add member variables studentName, collegeName of type String 
+
+● Add a member variable studentID of type int. 
+
+● Make all the member variables as private.
+
+ ● Add a main method. And print a message “Successful”.
+
+ ● Compile the class 
+
+● Run the class (Follow Coding convention)
+
+
+package Student;
+
+public class Student {
+    private String stdName;
+    private String collName;
+    private int stdId;
+    public Student(String stdName, String collName, int stdId){
+        this.stdName = stdName;
+        this.collName = collName;
+        this.stdId = stdId;
+    }
+    public String getStdName(){
+        return stdName;
+    }
+    public void setStdName(String stdName){
+        this.stdName=stdName;
+    }
+    public String getCollName(){
+        return collName;
+    }
+    public void setCollName(String collName){
+        this.collName = collName;
+    }
+    public int getStdId(){
+        return stdId;
+    }
+    public void setStdId(int stdId){
+        this.stdId = stdId;
+    }
+}
+
+package Student;
+
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Your name ");
+        String stdName = sc.nextLine();
+        System.out.print("Enter your College Name ");
+        String collName = sc.nextLine();
+        System.out.print("Enter your Id ");
+        int stdId = sc.nextInt();
+        Student st = new Student(stdName, collName, stdId);
+        System.out.println(st.getStdName()+" , " +st.getCollName()+ " , " +st.getStdId());
+       // System.out.println(st.getCollName());
+       // System.out.println(st.getStdId());
+    }
+}
+====================================================
+
+Q5:- ● Create a new class Employee 
+
+● Add member variables: id and age of type int, name of type String and isPermanent of type boolean 
+
+● Now assign values 35.5 to age; See the error message.
+
+ ● How can you avoid this error? Correct the error by casting. 
+
+● Make all the members protected 
+
+● Add a main method to it. Print message “Successfully started”. 
+
+package Employee;
+
+public class Emp1 {
+    protected  int id;
+    protected int age;
+    protected String name;
+    protected boolean isPermanent;
+}
+package Employee;
+
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your id ");
+        int id=sc.nextInt();
+        System.out.print("Enter your age ");
+        int age = sc.nextInt();
+        System.out.print("Enter your Name ");
+        String name = sc.nextLine();
+        sc.nextLine();
+        boolean isPermanent = sc.hasNextBoolean();
+        Emp1 emp = new Emp1();
+        System.out.println("Successfully Started");
+
+        System.out.println(emp.id);
+        System.out.println(emp.age);
+        System.out.println(emp.name);
+        System.out.println(emp.isPermanent);
+    }
+}
+=============================================================
+Q6:- Write a program to check whether a number is a Strong number or not. Strong number is a special number whose sum of factorial of digits is equal to the original number. For example: 145 is a strong number. Since, 1! + 4! + 5! = 145.
+
+package Encapsulation;
+
+public class StrongNumber {
+    public  static  int Factorial(int num){
+        if(num == 0 || num ==1){
+            return 1;
+
+        }
+        else {
+            return num*Factorial(num-1);
+        }
+    }
+    public  static boolean isStrongNumber(int number){
+        int OrigNumber = number;
+        int sum = 0;
+        while (number!=0){
+            int digit = number%10;
+            sum += Factorial(digit);
+            number /= 10;
+        }
+        return sum==OrigNumber;
+    }
+}
+
+package Encapsulation;
+
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number ");
+        int number= sc.nextInt();
+        StrongNumber st=new StrongNumber();
+        // Use Control statement
+        /*if (st.isStrongNumber(number)){
+            System.out.println(number+" is a strong number");
+        }else{
+            System.out.println(number+ " is not a strong number");
+        }*/
+        // Use Ternary operator
+        String checkNumber = (st.isStrongNumber(number)) ? "is a strong number" : " is not a strong number";
+        System.out.println(checkNumber);
+
+    }
+}
+====================================================================
+Q7:-  Write a program to check leap year using if else. How to check whether a given year is a leap year or not. [Hint:Take an input of any number. Store it in some variable say year. If a year is exactly divisible by 4 and not divisible by 100, then it is a leap year. Or if a year is exactly divisible by 400 then it is a leap year.
+
+package Encapsulation;
+
+import java.util.Scanner;
+
+public class LeapYears {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please Enter Your Years: ");
+        int year=sc.nextInt();
+        // using ternary operator
+       /* String LeapYears = ((year%4==0 && year % 100 !=0) || (year % 400 ==0)) ? "Is a Leap Years" : "Is not a Leap Years";
+        System.out.println(LeapYears);*/
+        // using control statement
+        if ((year%4==0 && year % 100 !=0) || (year % 400 ==0)){
+            System.out.println(year+ "is a leap years");
+        }else {
+            System.out.println(year+ "is not a leap years");
+        }
+    }
+}
+=====================================================
+Q8:- Create a program to calculate the annual salary of an employee by using inheritance. Create a class named "User" with the following properties and methods: Properties: id(int): representing the id of the User name(String):representing the name of the User Constructor: Declare parameterized constructor to initialize id and name. Create a subclass named "Employee" that inherits from the "User" class. Add the following additional properties and methods: Properties: salary(double):representing the monthly salary of the employee Method: double calculateAnnualSalary():to calculate the annual salary earned by the employee. In the main method, create an object of "Employee" class. Calculate the annual salary of the employee and display it.. [Hint:Use constructor or setter methods to set the value].
+
+package Employee;
+
+public class User {
+    protected int id;
+    protected String name;
+    public User(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
+}
+
+package Employee;
+
+public class Employee extends User {
+   private  double salary;
+   public Employee(int id, String  name, double salary){
+       super(id,name);
+       this.salary = salary;
+   }
+   public  double calculateAnnualSalary(){
+       return salary *12;
+   }
+}
+
+package Employee;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Employee id ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Employee Name ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Employee Salary ");
+        double salary = sc.nextDouble();
+        Employee emp= new Employee(id,name,salary);
+        double annualSalary = emp.calculateAnnualSalary();
+        System.out.println(emp.id+ " " +emp.name+ " " +annualSalary);
+    }
+}
+
+===============================================================
+
+Q9:- Declare an array with 10 elements. Get a subarray from an array between index 2 to 6 and find out the 2nd highest number from the sub array.
+
+	  Input: 2 4 5 3 6 7 9 4 5 6
+
+	 Output:
+
+	       Sub array: 5 3 6 7 9
+
+	       2nd Highest element: 7
+
+package Encapsulation;
+
+import java.util.Arrays;
+
+public class CheckMaxArray {
+    public static void main(String[] args) {
+        int[] arr = {2,4,5,3,6,7,9,4,5,6};
+        int[] arrRange = Arrays.copyOfRange(arr,2,7);
+        int Max= arrRange[arrRange.length-2];
+        Arrays.sort(arrRange);
+        System.out.println(Arrays.toString(arrRange));
+        System.out.println(Max);
+
+
+    }
+}
+
+
+
+
